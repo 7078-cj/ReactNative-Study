@@ -13,7 +13,7 @@ function Navbar({setPage}) {
         }
         />
         <Button
-        title="profile"
+        title="Lists"
         onPress={() =>
           setPage('Lists')
         }
