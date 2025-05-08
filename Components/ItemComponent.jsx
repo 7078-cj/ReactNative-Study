@@ -3,8 +3,8 @@ import { Text, TouchableOpacity } from 'react-native'
 
 function ItemComponent({item, handleDelete, }) {
   return (
-    <TouchableOpacity className='flex flex-col justify-center items-center h-[200px] bg-slate-100 gap-4'>
-      <TouchableOpacity className='bg-slate-200 p-4 rounded-lg shadow-md'>
+    <TouchableOpacity className='flex flex-row justify-center items-center  bg-slate-100 gap-4 p-3 rounded-2xl shadow-md '>
+      <TouchableOpacity className=''>
         <Text className='text-lg font-bold'>{item.title}</Text>
         <Text className='text-sm text-gray-500'>{item.description}</Text>
       </TouchableOpacity>

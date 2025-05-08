@@ -17,8 +17,8 @@ function Home2() {
 
 
     return (
-        <View className='bg-slate-200 flex flex-col justify-center items-center p-6 h-[500px] gap-4'>
-            <View className='bg-slate-500 p-4 flex flex-row justify-center items-center w-full max-w-md rounded-2xl shadow-md'>
+        <View className='bg-slate-200 flex flex-col justify-center items-center w-full h-[500px] gap-4'>
+            <View className='bg-slate-500 p-4 flex flex-col justify-center items-center w-full max-w-md rounded-2xl shadow-md'>
                 <TextInput
                             value={name}
                             onChangeText={setName}
@@ -45,8 +45,8 @@ function Home2() {
                         </TouchableOpacity>
             </View>
 
-            <ScrollView className='flex-1 w-full'>
-                <View className='flex flex-row flex-wrap w-[300px] flex-grow justify-center items-center h-[500px] bg-slate-100 gap-4'>
+            <ScrollView>
+                <View className='flex flex-row flex-wrap w-[300px] flex-grow justify-center items-center gap-4'>
                     {items.map((item, index) => (
                         <ItemComponent key={index} item={item} handleDelete={handleDelete}/>
                     ))}
