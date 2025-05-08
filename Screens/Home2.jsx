@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, TextInput, View } from 'react-native'
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 import "../global.css";
 import ItemComponent from '../Components/ItemComponent';
@@ -17,11 +17,8 @@ function Home2() {
 
 
     return (
-        <View className="bg-slate-200 flex flex-col justify-center items-center">
-            <View className='bg-slate-400 p-4'>
-                <Text >Screen2</Text> 
-            </View>
-            <View className='bg-slate-400 p-4'>
+        <View className='bg-slate-200 flex flex-col justify-center items-center p-6 h-[500px] gap-4'>
+            <View className='bg-slate-500 p-4 flex flex-row justify-center items-center w-full max-w-md rounded-2xl shadow-md'>
                 <TextInput
                             value={name}
                             onChangeText={setName}
@@ -43,18 +40,24 @@ function Home2() {
                                 setDescription('');
                             }}
                             className="bg-blue-200 px-6 py-3 rounded-lg mt-2 active:bg-blue-700"
-                        />
+                        >
+                            <Text className="text-white text-center text-base font-semibold">Add</Text>
+                        </TouchableOpacity>
             </View>
 
-            <View className='flex flex-col justify-center items-center h-full bg-slate-100 gap-4'>
-                {items.map((item, index) => (
-                    <ItemComponent item={item} handleDelete={handleDelete}/>
-                ))}
-                <View className='bg-slate-200 p-4 rounded-lg shadow-md'>
-                    <Text className='text-lg font-bold'>No items</Text>
+            <ScrollView className='flex-1 w-full'>
+                <View className='flex flex-row flex-wrap w-[300px] flex-grow justify-center items-center h-[500px] bg-slate-100 gap-4'>
+                    {items.map((item, index) => (
+                        <ItemComponent key={index} item={item} handleDelete={handleDelete}/>
+                    ))}
+                    {items.length === 0 && (
+                        <Text className='text-lg font-bold'>No items</Text>
+                    )}
+
+                    
                 </View>
             
-            </View>
+            </ScrollView>
         </View>
     )
  
